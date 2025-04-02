@@ -36,7 +36,7 @@ The weight represents the cost to travel along the edge. (They can possibly be n
 
 ## Isomorphism and Subgraphs
 - **Isomorphic Graphs:** Graphs with identical structure (Ignoring the names of the vertices). Isomorphic graphs have the name number of vertices, edges, and each pair of vertices are conencted in the same way. If One of these are violated, the graph is not isomorphic. <br><br>
-- **Subgraph:** Graph that is isomorphic to a **part* of another graph <br><br>
+- **Subgraph:** Graph that is isomorphic to a *part* of another graph <br><br>
 
 ## Degree
 - **Degree of a vertex** represesnts the number of edges incident to a vertex <br><br>
@@ -52,9 +52,29 @@ The weight represents the cost to travel along the edge. (They can possibly be n
 - **Dense Graph:** has Θ(|V^2|) edges. Eg if every vertex has O(|V|) neigbours. Eg a complete graph. <br><br>
 - Anything inbetween is either on the spare side or on the dense side, depending critically on the context. <br><br>
 
+## How many edges?
+**At least:**
+- Connected: *n - 1* edges. Eg a spanning tree <br>
+- Not connected: 0 edges. A bunch of vertices with zero edges. <br><br>
+**At most:**
+- Simple: *n(n-1)/2* edges. Every vertex conenects to every other vertice. <br>
+- Not simple: *Unbounded*. Imagine two vertices, with an infinite number of edges that connect the two. <br><br>
+
 ## Adjacency Matrix
+- Vertices are stored in a matrix, with the indexes of the arrays representing each vertice. The intersecting cell signifies to us if there is an edge between the two vertice. You can use anything like a boolean for this. <br><br>
+- Vertices can be stored in a hashmap so you can map vertice names to an integer value. Because an adjacency matrix is just two arrays, and arrays use integer indexes Kasper. <br><br>
+- Edges can also be stored in a hashmap so you can map vertice names + edges to an integer value <br><br>
+- **insertVertex(vertex v)** O(n) amortized. Like when you're inserting into an array. You might have to shift elements, and you also have to add edges. <br><br>
+- **removeVertex(vertex v)** O(n) amortized. Like when you're removing from an array, you mught have to shift elements and also remove any corresponding edges. <br><br>
+- **areAdjacent(vertex v, vertex u)** O(1). Arrays have O(1) lookup on its indexes which makes checking if two vertices are connected quick. <br><br>
+- **incidentEdges(vertex v)** O(n). Check every value in a vertex's row (or column) and find which other vertices are connected to a vertex. <br><br>
+- **Space usage:** O(n) + O(m) + O(n^2) = O(n^2).
+- *m* is the edges. *n* is the vertices. <br><br>
+- *Unweighted*: The matrix can contain booleans <br>
+- *Weighted*: The matrix contains the edge weights. Use a value like infinity for edges that DNE. <br><br>
 
 
 ## Adjacency List
+
 
 ## Time Complexities
