@@ -4,4 +4,6 @@ Collection of vertices (nodes) connected via edges. <br>
 **G = (V, E)** <br>
 **V** is a set of vertices; {v_1, v_2, v_3, ..., v_n} <br>
 **E** is a set of edges; {e_1, e_2, e_3, ..., e_m} where each e_i is a pair of vertices: e_i = (V x V) <br>
+If each edge is an ordered pair, eg (A,B) != (B,A) then the graph is **directed** (The edges have a direction, they act like a one way street) otherwise the graph is **undirected** <br>
+![Basic Graphs](./assets/basic_graph.jpeg)
 ### Graph Terminology:
