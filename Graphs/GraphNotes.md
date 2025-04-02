@@ -14,7 +14,9 @@ If each edge is an ordered pair, eg (A,B) != (B,A) then the graph is **directed*
 - **Simple Path:** A path with no repeated vertices. No Dupes <br><br>
 - **Cycle:** A path with the same start and end vertex <br><br>
 - **Simple Graph:** No self-loops or multi edges. **Self-loops** are when a vertex has an edge that points to itself. **Multi-Edges** are when two vertices have multiple edges between each other. <br><br>
-- **Subgraph of *G = (V,E)*:** Small part of the graph *G*. All the vertices in the subgraph G' are also in *V*. All edges in G' are in *E*. If (u, v) is in E', then u and v are in V'. <br><br>
+- **Subgraph of *G = (V, E)*:** Small part of the graph *G*. All the vertices in the subgraph G' are also in *V*. All edges in G' are in *E*. If (u, v) is in E', then u and v are in V'. <br><br>
 - **Complete Graph:** A graph where every vertex is connected to every other vertex <br><br>
 - **Connected Graph:** A graph where there exists a path between every pair of vertices <br><br>
 - **Connected Component:** A connected subgraph <br><br>
+- **Acyclic Graph:** A graph with no cycles <br><br>
+- **Spanning Tree of *G = (V, E)*:** Acyclic, connected graph with vertex set *V*. It contains all the vertices of the original graph and its connected. It "spans" the entire graph. Spanning trees have *n - 1* edges, *n* being the number of vertices. There can be many different possible spanning trees for a graph.<br><br>
