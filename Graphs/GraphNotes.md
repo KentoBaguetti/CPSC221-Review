@@ -73,8 +73,21 @@ The weight represents the cost to travel along the edge. (They can possibly be n
 - *Unweighted*: The matrix can contain booleans <br>
 - *Weighted*: The matrix contains the edge weights. Use a value like infinity for edges that DNE. <br><br>
 
-
 ## Adjacency List
+- Vertices are stored in a hashmap (or even an array if the index corresponds to a vertex). The key (or index) is the vertex, and the value stores a linked list of all adjacent vertices. Use a doubly-linked list for O(1) removals. O(n) space used<br><br>
+- Edges are also stored in a hashmap (or array) where the key (or index) represents the edge name, and it stores a pair of vertices, which are the two vertices the edge connects. O(m) space used. <br><br>
+- **insertVertex(vertex v)** O(1) <br><br>
+- **removeVertex(vertex v)** deg(v). You need to remove its connection to every other vertex v is connected to. <br><br>
+- **areAdjacent(vertex v, vertex u)** worst case: max(deg(v), deg(u)). Since you need to go through every incident edge.
+if the list tracks its length: min(deg(v), deg(u)) <br><br>
+- **incidentEdges(vertex v)** deg(v) <br><br>
+- **Space usage:** O(n + m) <br><br>
 
+## Edge List
+- Edges are stored in a hashmap or array <br><br>
+- Uses less space but poor perofrmance for most operations <br><br>
+
+## Time Complexities of Graph Implementations
+![Graph Runtimes](./assets/graph_implementaion_rt.jpeg)
 
 ## Time Complexities
