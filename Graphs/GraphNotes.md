@@ -51,3 +51,10 @@ The weight represents the cost to travel along the edge. (They can possibly be n
 - **Sparse Graph:** has O(|V|) edges. Each vertex has at most O(1) neighbors. Remeber O(x) is an upperbound <br><br>
 - **Dense Graph:** has Θ(|V^2|) edges. Eg if every vertex has O(|V|) neigbours. Eg a complete graph. <br><br>
 - Anything inbetween is either on the spare side or on the dense side, depending critically on the context. <br><br>
+
+## Adjacency Matrix
+
+
+## Adjacency List
+
+## Time Complexities
