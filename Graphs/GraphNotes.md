@@ -8,5 +8,5 @@ If each edge is an ordered pair, eg (A,B) != (B,A) then the graph is **directed*
 ![Basic Graphs](./assets/basic_graph.jpeg)
 ### Graph Terminology:
 **Vertices Adjacent to *V*:** *N(v)* Neighbouring vertices to a vertex. Represented as a set of vertices <br>
-**Edges Incident to *V*:** *I(v)* Set of edges attached to a particular vertex <br>
-**Degree of *V*:** *|I(v)|* The number of edges connected to a vertex (Integer)
+**Edges Incident to *V*:** *I(v)* Set of edges attached to a particular vertex <br><br>
+**Degree of *V*:** *|I(v)|* The number of edges connected to a vertex (Integer)<br>
