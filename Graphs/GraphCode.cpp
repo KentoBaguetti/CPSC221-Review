@@ -5,6 +5,8 @@
 #include <list>
 #include <set>
 #include <queue>
+#include <functional>
+#include <cmath>
 using namespace std;
 
 //////////////////////////////////////////////////////////////////
@@ -54,6 +56,67 @@ struct GraphAdjacencyList {
             cout << endl;
         }
     }
+};
+
+struct WeightedGraph {
+
+    // Vertex : [{neighbor, weight},...]
+    unordered_map<int, list<pair<int, int>>> adjList;
+    set<int> vertices;
+
+};
+
+/////////////////////////////////
+// Disjoint Set Implementation # to be used by some algos
+/////////////////////////////////
+
+struct DisjointSet {
+
+    unordered_map<int, int> disjointSet;
+
+    void addNode (int i) {
+        disjointSet[i] = -1;
+    }
+
+    // find with path compression
+    int find (int i) {
+
+        if (disjointSet[i] < 0) return i;
+        disjointSet[i] = find(disjointSet[i]);
+        return disjointSet[i];
+
+    }
+
+    bool inSameSet (int i, int j) {
+        
+        int rootI = find(i);
+        int rootJ = find(j);
+
+        return rootI == rootJ;
+
+    }
+
+    void mergeSets (int i, int j) {
+
+        int rootI = find(i);
+        int rootJ = find(j);
+
+        if (rootI == rootJ) return;
+
+        if (disjointSet[rootI] <= disjointSet[rootJ]) {
+
+            disjointSet[rootI] += disjointSet[rootJ];
+            disjointSet[rootJ] = rootI;
+
+        } else {
+
+            disjointSet[rootJ] += disjointSet[rootI];
+            disjointSet[rootI] = rootJ;
+
+        }
+
+    }
+
 };
 
 /////////////////////////////////
@@ -205,6 +268,17 @@ vector<int> topological_sort_khan (GraphAdjacencyList G) {
 
     // we can check if the graph has a cycle if the length of res != |V|
     return res;
+
+}
+
+/////////////////////////////////
+// MST Algorithms
+/////////////////////////////////
+
+
+unordered_map<int, list<int>> KruskalsAlgorithm (GraphAdjacencyList G) {
+
+
 
 }
 
