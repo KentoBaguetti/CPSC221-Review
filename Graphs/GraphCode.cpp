@@ -51,7 +51,7 @@ struct GraphAdjacencyList {
     }
 };
 
-void BFS (GraphAdjacencyList G, int vertex, unordered_map<pair<int, int>, bool> &visitedEdges, unordered_map<int, bool> &visitedVertices) {
+void BFS (GraphAdjacencyList G, int vertex, unordered_map<pair<int, int>, bool>& visitedEdges, unordered_map<int, bool>& visitedVertices) {
 
     queue<int> q;
     q.push(vertex);
@@ -64,7 +64,7 @@ void BFS (GraphAdjacencyList G, int vertex, unordered_map<pair<int, int>, bool> 
         for (int neighbor : G.adjList[curr]) {
 
             // if the neighboring vertex hasn't been visited
-            if (!visitedVertices.contains(neighbor)) {
+            if (!visitedVertices[neighbor]) {
 
                 visitedEdges[{curr, neighbor}] = true;
                 visitedVertices[neighbor] = true;
@@ -99,6 +99,49 @@ void Algorithm_Traverse_BFS (GraphAdjacencyList G) {
 
     for (int vertex : G.vertices) {
         if (visitedVertices[vertex] = false) BFS(G, vertex, vistedEdges, visitedVertices);
+    }
+
+}
+
+void DFS (GraphAdjacencyList G, int vertex, unordered_map<pair<int, int>, bool>& visitedEdges, unordered_map<int, bool>& visitedVertices) {
+
+    visitedVertices[vertex] = true;
+
+    for (int neighbor : G.adjList[vertex]) {
+
+        if (!visitedVertices[neighbor]) { // if the vertex is unexplored
+
+            visitedEdges[{vertex, neighbor}] = true;
+            DFS(G, neighbor, visitedEdges, visitedVertices);
+
+        } else if (visitedEdges.find({vertex, neighbor}) == visitedEdges.end()) { // if the vertex has been visited but not the edge
+
+            visitedEdges[{vertex, neighbor}] = false;
+
+        }
+
+
+    }
+
+}
+
+void Algorithm_Traverse_DFS (GraphAdjacencyList G) {
+
+     // true = Discovery
+    // false = back
+    // unvisited edges don't need to be stored as we will "visit" every edge by the time BFS terminates
+    unordered_map<pair<int, int>, bool> vistedEdges;
+
+    // false = Unvisited
+    // true = Vistied
+    unordered_map<int, bool> visitedVertices;
+
+    for (int vertex : G.vertices) {
+        visitedVertices[vertex] = false;
+    }
+
+    for (int vertex : G.vertices) {
+        if (visitedVertices[vertex] = false) DFS(G, vertex, vistedEdges, visitedVertices);
     }
 
 }
