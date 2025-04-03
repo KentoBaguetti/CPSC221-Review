@@ -115,7 +115,7 @@ if the list tracks its length: min(deg(v), deg(u)) <br><br>
 - The discovery edges form a spanning tree <br>
 - The "distances" form the length of the shortest path from the starting vertex and the predecessor vertices form a shortest path in the sequence of vertices <br>
 - One BFS() vists one connected component <br>
-- Running time of O(n + m) <br>
+- Running time of **O(n + m)** (with adjacency list) <br>
 - Checks all edges and vertices <br><br>
 
 
@@ -138,7 +138,7 @@ if the list tracks its length: min(deg(v), deg(u)) <br><br>
 #### General Observations
 - The discovery edges form a spanning tree <br>
 - One DFS instance visits one connected component <br>
-- Time complexity of DFS: **O(n + m)**
+- Time complexity of DFS: **O(n + m)** (with adjacency list)
 
 ## DAG
 - Directed Acyclic Graph <br>
