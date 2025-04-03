@@ -155,7 +155,8 @@ Adjacency List | Adjacency Matrix
 - Dequeue a vertex *v* from the queue and output it O(1)
 - Reduce the in-degree of all vertices adjacent to *v* O(deg(v)) | O(n)
 - Enqueue any vertices with an updated in-degree of zero into the queue O(1)
-- Remove *v* from the queue O(1) <br><br> 
+- Remove *v* from the queue O(1) <br>
+[Topological Sort Question Leetcode](https://leetcode.com/problems/course-schedule/description/?envType=problem-list-v2&envId=topological-sort) <br><br>
 
 - When using an adjacency list, the number of vertices/edges that have been processed it equal to ∑deg^-(v) (The sum of the in-degrees of every vertice) <br>
 - Topological sort can be used for cycle detection if there are still vertice(s) remaining with in-degrees in a connected graph <br><br> 
