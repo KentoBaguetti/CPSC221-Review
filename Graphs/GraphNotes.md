@@ -140,4 +140,15 @@ if the list tracks its length: min(deg(v), deg(u)) <br><br>
 - One DFS instance visits one connected component <br>
 - Time complexity of DFS: **O(n + m)**
 
+## Topological Sort
+- Linear ordering of vertices in a **DAG** such that for every directed edge "u -> v", "u" comes before "v" <br><br>
+<span style="color:blue">Adjacency List</span> | <span style="color:Red">Adjacency Matrix</span>
+- Initialize each vertex's *in-degree* (# of inbound edges) <span style="color:blue">O (m + n)</span> | <span style="color:Red">O(n^2)</span> <br> 
+- Initialize a queue to contain all vertices with an in-degree of zero <br>
+- While the queue is not empty (queue contains vertices):
+- Dequeue a vertex *v* from the queue and output it
+- Reduce the in-degree of all vertices adjacent to *v*
+- Enqueue any vertices with an updated in-degree of zero into the queue
+- Remove *v* from the queue <br><br>
+
 ## Time Complexities
