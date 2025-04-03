@@ -159,6 +159,55 @@ void Algorithm_Traverse_DFS (GraphAdjacencyList G) {
 
 }
 
+/////////////////////////////////
+// Topological sort(s)
+/////////////////////////////////
+
+// khan's algoritm for topological sort
+vector<int> topological_sort_khan (GraphAdjacencyList G) {
+
+    // the resulting topologically sorted graph to be returned
+    vector<int> res;
+
+    unordered_map<int, int> inDegreeCount;
+
+    // set each in-degree as 0
+    for (int vertex : G.vertices) {
+        inDegreeCount[vertex] = 0;
+    }
+
+    // update the in-degrees of every vertex
+    for (int vertex : G.vertices) {
+        for (int neighbour : G.adjList[vertex]) {
+            inDegreeCount[neighbour]++;
+        }
+    }
+
+    // initialize the queue with all the 0-degree vertices
+    queue<int> q;
+    for (int vertex : G.vertices) {
+        if (inDegreeCount[vertex] == 0) q.push(vertex);
+    }
+
+    while (!q.empty()) {
+
+        int curr = q.front();
+        q.pop();
+        res.push_back(curr);
+
+        // reduce the in-degree counts for each vertice adjacent to our current vertex | add new vertices with in-degree 0 to the queue
+        for (int neighbor : G.adjList[curr]) {
+            inDegreeCount[neighbor]--;
+            if (inDegreeCount[neighbor] == 0) q.push(neighbor);
+        }
+
+    }
+
+    // we can check if the graph has a cycle if the length of res != |V|
+    return res;
+
+}
+
 int main () {
 
     return 0;

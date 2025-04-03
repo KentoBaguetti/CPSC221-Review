@@ -169,5 +169,15 @@ Adjacency List | Adjacency Matrix
 - Weighted graphs can have a **Minimum spanning tree** <br>
 - The spanning tree with the least total edge cost <br><br>
 
+## Minimum Spanning Trees (MST)
+- Given a graph *G = (V, E)* with unconstrained (Positive or Negative) edge weights: <br>
+- G' = (V, E') is an output graph with the following traits
+- G' is a subgraph of G
+- G' is connected and acyclic
+- The sum of the edge weights of E' is minimal among all such spanning trees <br><br>
+
+#### Kruskal's Algorithm
+- Builds a spanning tree from several *connected components* <br>
+- Repeatedly chooses the min-weight joining two connected components
 
 ## Time Complexities
