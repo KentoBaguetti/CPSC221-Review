@@ -7,6 +7,11 @@
 #include <queue>
 using namespace std;
 
+//////////////////////////////////////////////////////////////////
+// Graph implementations
+// !!!!! These implementations are my quick implementations !!!!!!
+//////////////////////////////////////////////////////////////////
+
 struct GraphMatrix {
     
     vector<vector<int>> AdjacencyMatrix;
@@ -50,6 +55,10 @@ struct GraphAdjacencyList {
         }
     }
 };
+
+/////////////////////////////////
+// Breadth First Search
+/////////////////////////////////
 
 void BFS (GraphAdjacencyList G, int vertex, unordered_map<pair<int, int>, bool>& visitedEdges, unordered_map<int, bool>& visitedVertices) {
 
@@ -102,6 +111,10 @@ void Algorithm_Traverse_BFS (GraphAdjacencyList G) {
     }
 
 }
+
+/////////////////////////////////
+// Depth First Search
+/////////////////////////////////
 
 void DFS (GraphAdjacencyList G, int vertex, unordered_map<pair<int, int>, bool>& visitedEdges, unordered_map<int, bool>& visitedVertices) {
 
