@@ -116,8 +116,28 @@ if the list tracks its length: min(deg(v), deg(u)) <br><br>
 - The "distances" form the length of the shortest path from the starting vertex and the predecessor vertices form a shortest path in the sequence of vertices <br>
 - One BFS() vists one connected component <br>
 - Running time of O(n + m) <br>
+- Checks all edges and vertices <br><br>
 
 
 ## Depth First Search (DFS)
+- Like the other three tree traversals, uses a **stack**. Can be done recursively by taking advantage of the call stack. <br><br>
+- Visits vertices along a single path as far as it can go, like how in pre-order traversal we go down one side of a tree as far as we can go. <br>
+- Then backtracks to the first junction and goes down that path. <br>
+- Process repeats until all vertices in the given component has been visited. <br><br>
+
+#### Full Traversal algo of G with DFS
+- Label the edges of *G* as **discovery** or **back** edges <br>
+- We do the same thing we did with BFS where we set all vertices as unvisited and all edges as unexplored <br>
+- Then for all unvisited vertices, we run the DFS algo <br><br>
+
+#### DFS Algo
+- Set the current vertex as **visited** <br>
+- For all neighbours of the current vertex, if the neighbor hasn't been visited, label the edge to it as **Discovery** and recursively call DFS on that neighbour <br>
+- If the neighbor has been visited, but the edge is unexplored, label the edge as **back** <br>
+
+#### General Observations
+- The discovery edges form a spanning tree <br>
+- One DFS instance visits one connected component <br>
+- Time complexity of DFS: **O(n + m)**
 
 ## Time Complexities
