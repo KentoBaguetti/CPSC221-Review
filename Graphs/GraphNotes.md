@@ -106,7 +106,16 @@ if the list tracks its length: min(deg(v), deg(u)) <br><br>
 - Takes a graph and vertex as input parameters <br>
 - Similar to a level-order traversal, use a Q to store unvisited vertices <br>
 - Push the first vertex into the queue and run a while loop to iterate while the queue is not empty. <br>
-- For every vertice in the queue, check if it has been visited before. If it has not been visited, set the edge to that vertex as 
+- Pop *v* from the queue. Loop through all adjacent vertices to *v* <br>
+- If the neighbouring vertex is unvisited, set it as visited, label the edge to it as **discovery** and add *v* to the queue <br>
+- If the neighboring vertex has been visited but the edge to it has not been "crossed", label the edge as **Cross** <br><br>
+
+#### General Observations of BFS
+- For *n* vertices, there are *n-1* discovery edges <br>
+- The discovery edges form a spanning tree <br>
+- The "distances" form the length of the shortest path from the starting vertex and the predecessor vertices form a shortest path in the sequence of vertices <br>
+- One BFS() vists one connected component <br>
+- Running time of O(n + m) <br>
 
 
 ## Depth First Search (DFS)
