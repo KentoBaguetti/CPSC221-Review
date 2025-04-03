@@ -89,5 +89,26 @@ if the list tracks its length: min(deg(v), deg(u)) <br><br>
 
 ## Time Complexities of Graph Implementations
 ![Graph Runtimes](./assets/graph_implementaion_rt.jpeg)
+<br><br>
+
+## Graph Traversals
+- **Objective:** Visit every vertex and every edge in the graph <br><br>
+
+## Breadth First Search (BFS)
+- Similar to the level order traversal of a tree. You vist each "distance" level from a starting vertex. Use a queue to implement this algorithm just like with level order traversal. <br><br>
+#### Full traversal algo of G with BFS:
+- First label all vertices as **UNVISITED** <br>
+- First label all edges as **UNEXPLORED** <br>
+- For all unvisited vertices, run the **BFS** algorithm <br>
+- The BFS algo won't run on all vertices unless the graph has zero edges. Best case scenario we run BFS once. <br><br>
+
+#### BFS Algo
+- Takes a graph and vertex as input parameters <br>
+- Similar to a level-order traversal, use a Q to store unvisited vertices <br>
+- Push the first vertex into the queue and run a while loop to iterate while the queue is not empty. <br>
+- For every vertice in the queue, check if it has been visited before. If it has not been visited, set the edge to that vertex as 
+
+
+## Depth First Search (DFS)
 
 ## Time Complexities
