@@ -140,15 +140,34 @@ if the list tracks its length: min(deg(v), deg(u)) <br><br>
 - One DFS instance visits one connected component <br>
 - Time complexity of DFS: **O(n + m)**
 
-## Topological Sort
+## DAG
+- Directed Acyclic Graph <br>
+- Has a direction
+- Does not contain cylces
+- Can be weighted
+
+## Topological Sort (Khan's Algorithm)
 - Linear ordering of vertices in a **DAG** such that for every directed edge "u -> v", "u" comes before "v" <br><br>
-<span style="color:blue">Adjacency List</span> | <span style="color:Red">Adjacency Matrix</span>
-- Initialize each vertex's *in-degree* (# of inbound edges) <span style="color:blue">O (m + n)</span> | <span style="color:Red">O(n^2)</span> <br> 
-- Initialize a queue to contain all vertices with an in-degree of zero <br>
-- While the queue is not empty (queue contains vertices):
-- Dequeue a vertex *v* from the queue and output it
-- Reduce the in-degree of all vertices adjacent to *v*
-- Enqueue any vertices with an updated in-degree of zero into the queue
-- Remove *v* from the queue <br><br>
+Adjacency List | Adjacency Matrix 
+- Initialize each vertex's *in-degree* (# of inbound edges) O (m + n) | O(n^2) <br> 
+- Initialize a queue to contain all vertices with an in-degree of zero O(n) <br>
+- While the queue is not empty (queue contains vertices): (n times)
+- Dequeue a vertex *v* from the queue and output it O(1)
+- Reduce the in-degree of all vertices adjacent to *v* O(deg(v)) | O(n)
+- Enqueue any vertices with an updated in-degree of zero into the queue O(1)
+- Remove *v* from the queue O(1) <br><br> 
+
+- When using an adjacency list, the number of vertices/edges that have been processed it equal to ∑deg^-(v) (The sum of the in-degrees of every vertice) <br>
+- Topological sort can be used for cycle detection if there are still vertice(s) remaining with in-degrees in a connected graph <br><br> 
+
+## Spanning Tree
+- **Spanning Tree of *G = (V, E)*:** Acyclic, connected graph with vertex set *V*. It contains all the vertices of the original graph and its connected. It "spans" the entire graph. Spanning trees have *n - 1* edges, *n* being the number of vertices. There can be many different possible spanning trees for a graph.<br><br>
+- Touches all vertices in the graph
+- Forms a tree, connected, contains no cycles, i.e. minimally connected
+- You can make a spanning tree with the discovery edges from **BFS/DFS** <br><br><br>
+- **Spanning Forest:** Collection of spanning trees, one for each connected component <br><br>
+- Weighted graphs can have a **Minimum spanning tree** <br>
+- The spanning tree with the least total edge cost <br><br>
+
 
 ## Time Complexities
