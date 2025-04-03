@@ -328,6 +328,57 @@ unordered_map<int, list<pair<int, int>>> KruskalsAlgorithm (WeightedGraph G) {
 
 }
 
+unordered_map<int, list<pair<int, int>>> PrimsAlgorithm (WeightedGraph G) {
+
+    // { vertex, { adjVertex, weight } }
+    unordered_map<int, list<pair<int, int>>> res;
+
+    // stores { weight, { vertex, adjacentVertex } }
+    priority_queue<
+    pair<int, pair<int, int>>,
+    vector<pair<int, pair<int, int>>>,
+    greater<>> pq;
+
+    // initialize the PQ
+    for (int vertex : G.vertices) {
+
+        for (pair<int,int> neighbor : G.adjList[vertex]) {
+
+            pq.push({neighbor.second, {vertex, neighbor.first}});
+
+        }
+
+    }
+
+    set<int> seenVertices;
+    int maxVertices = G.vertices.size(); // number of vertices in the graph
+
+    pair<int, pair<int, int>> firstVertex = pq.top();
+    pq.pop();
+
+    // add the first vertex to the MST
+    seenVertices.insert(firstVertex.second.first);
+    res[firstVertex.second.first].push_back({firstVertex.second.second, firstVertex.first});
+
+
+    while (seenVertices.size() < maxVertices) {
+
+        pair<int, pair<int, int>> curr = pq.top();
+        int currVertex = curr.second.first;
+        int adjVertex = curr.second.second;
+        int weight = curr.first;
+
+        if (seenVertices.contains(currVertex)) continue;
+
+        res[currVertex].push_back({adjVertex, weight});
+        seenVertices.insert(currVertex);
+
+    }
+
+    return res;
+
+}
+
 int main () {
 
     return 0;
