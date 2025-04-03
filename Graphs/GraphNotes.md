@@ -179,6 +179,35 @@ Adjacency List | Adjacency Matrix
 
 #### Kruskal's Algorithm
 - Builds a spanning tree from several *connected components* <br>
-- Repeatedly chooses the min-weight joining two connected components
+- Repeatedly chooses the min-weight joining two connected components <br><br>
+
+Kens explanation cuz fuck slides
+- Build the MST one at a time, starting from 0 <br>
+- Add the smallest weight edge that does not cause a cycle (Use a priority Q and disjoint set) <br>
+- Keep adding vertices until you have *|V| - 1* edges <br>
+- Skip edges that would cause a cycle <br><br>
+
+- Using a heap priority Q will cost us *|E|* time to build the PQ and *log|E|* for each removeMin, so *|E|log|E|* total <br>
+- Using an ordered array PQ will cost us *|E|log|E|* time to build (using a good sorting algo) and *O(1)* for each removal, so *|E|log|E|* total <br><br>
+
+- Maze construction is similar to Kruskal's algorithm, just change the use of a PQ for a random edge selection <br><br>
+
+#### Prim's Algorithm
+- Build the spanning tree from initially one vertex <br>
+- Repeatedly choose the min-weight edge from a vertex in the tree, to a vertex outside the tree (That does nott cause a cycle) and connect that vertex to the tree <br><br>
+
+Kens version
+- Build the MSt from one starting vertex <br>
+- Continue building the tree by always adding the min-weight edge from the current tree to a new (nonconnected) vertex <br>
+- Instead of iterating until we have *|V| - 1* edges, go until we've visited every vertice <br>
+- Only needs a PQ, does not require a disjoint set <br><br>
+
+- Interperse insertion and removal operations <br>
+- Max number of insertions into the PQ is *|E|* in the worst case <br>
+- Total cost of all insertions is O(|E|log|E|) <br>
+- For dense graphs, |E| == O(|V|^2), which means log|E| is in O(2*log|V|) which is in O(log|V|) <br>
+- Total time complexity of Prim's Algo is *O(|E|log|V|)*
+
+
 
 ## Time Complexities
