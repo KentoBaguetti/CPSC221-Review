@@ -177,7 +177,7 @@ Adjacency List | Adjacency Matrix
 - G' is connected and acyclic
 - The sum of the edge weights of E' is minimal among all such spanning trees <br><br>
 
-#### Kruskal's Algorithm
+### Kruskal's Algorithm
 - Builds a spanning tree from several *connected components* <br>
 - Repeatedly chooses the min-weight joining two connected components <br><br>
 
@@ -192,7 +192,7 @@ Kens explanation cuz fuck slides
 
 - Maze construction is similar to Kruskal's algorithm, just change the use of a PQ for a random edge selection <br><br>
 
-#### Prim's Algorithm
+### Prim's Algorithm
 - Build the spanning tree from initially one vertex <br>
 - Repeatedly choose the min-weight edge from a vertex in the tree, to a vertex outside the tree (That does nott cause a cycle) and connect that vertex to the tree <br><br>
 
