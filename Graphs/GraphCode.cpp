@@ -276,9 +276,55 @@ vector<int> topological_sort_khan (GraphAdjacencyList G) {
 /////////////////////////////////
 
 
-unordered_map<int, list<int>> KruskalsAlgorithm (GraphAdjacencyList G) {
+unordered_map<int, list<pair<int, int>>> KruskalsAlgorithm (WeightedGraph G) {
 
+    int numberOfVertices = G.vertices.size();
+    int edgeCount = 0;
 
+    unordered_map<int, list<pair<int, int>>> res;
+    int totalWeight = 0;
+
+    priority_queue<
+    pair<int, pair<int, int>>,
+    vector<pair<int, pair<int, int>>>,
+    greater<>> pq;
+
+    // PQ stores { weight, { node, adjacentNode } }
+    for (int vertex : G.vertices) {
+
+        for (pair<int, int> neighbor : G.adjList[vertex]) {
+
+            pq.push({neighbor.second, {vertex, neighbor.first}});
+
+        }
+
+    }
+
+    DisjointSet ds;
+    for (int vertex : G.vertices) {
+        ds.addNode(vertex);
+    }
+
+    while (edgeCount != numberOfVertices - 1 && !pq.empty()) {
+
+        pair<int, pair<int, int>> curr = pq.top();
+        pq.pop();
+
+        int i = curr.second.first;
+        int j = curr.second.second;
+        int edgeWeight = curr.first;
+        
+        if (ds.inSameSet(i, j)) continue;
+
+        totalWeight += edgeWeight;
+        edgeCount++;
+        res[i].push_back({j, edgeWeight});
+
+        ds.mergeSets(i, j);
+
+    }
+
+    return res;
 
 }
 
