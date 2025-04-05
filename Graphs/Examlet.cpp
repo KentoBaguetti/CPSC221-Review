@@ -48,3 +48,12 @@ int heapSubTree_betterr (int index, vector<int>& heap) {
     return count;
 
 }
+
+// assume heap index 1
+int findIndexHeight (int index, vector<int>& heap) {
+
+    if (index / 2 <= 1) return 0;
+
+    return 1 + findIndexHeight(index / 2, heap);
+
+}
