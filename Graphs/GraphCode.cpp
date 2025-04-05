@@ -379,6 +379,18 @@ unordered_map<int, list<pair<int, int>>> PrimsAlgorithm (WeightedGraph G) {
 
 }
 
+/////////////////////////////////
+// Dijkstra's Algo
+/////////////////////////////////
+
+// takes a Graph and starting vertex as parameters
+// Returns a unordered_map as some_vertex : cost_to_travel
+unordered_map<int, int> Dijkstras (WeightedGraph G, int vertex) {
+
+    
+
+}
+
 int main () {
 
     return 0;
