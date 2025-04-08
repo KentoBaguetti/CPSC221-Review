@@ -20,4 +20,27 @@
 - In a singly linked list:
 1. Find the insertion location by updating your current node
 2. Store the pointer of the next node of the current node in a temp variable
-3. 
+3. Make your current pointer point to your new node (The one ur inserting)
+4. Make the next pointer of your new node point to the node stored in our temporary variable
+5. Success <br><br>
+
+##### Removing from a Linked List
+- Similar concept to inserting into a linked list <br>
+- This time, just make ur current node, the one previous to the node you want to remove, point to the next node of the node you want to remove <br>
+- Make sure to **delete** the node you want to remove to clear up memory <br><br>
+
+##### Singly Linked List
+- Like a one way road, can only go in one direction <br>
+- Can have a tail pointer so you can insert at the tail in **O(1)** time <br>
+- Insertions in the middle of the list still take **O(n)** time <br>
+- Removals also still take **O(n)** time, since we only have a pointer to the last node and not the second last node <br><br>
+
+##### Doubly Linked List
+- Two-way road, can traverse the list in two directions <br>
+- Nodes provide pointers to its previous and next nodes <br>
+- Insertions require you to manipulate more pointers but still trivial <br>
+- Removals requrie you to manipulate more pointers but still trivial <br><br>
+
+##### Linked List Variations
+- **Circular Linked List:** A linked list whose tail pointer points to the head pointer (vice versa for a doubly linked list) <br>
+- **Sentinal Nodes:** "Dummy" nodes at the ends of the list which do not contain any data. They eliminate the special edge cases for list modifcations so you don't need to point to a nullptr <br><br>
