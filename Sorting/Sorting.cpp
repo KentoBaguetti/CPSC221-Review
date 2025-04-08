@@ -52,6 +52,57 @@ void InsertionSort (vector<int>& arr) {
 
 }   
 
+//////////////////////////////////////////////////////////////////
+// More Complex Sorting Algorithms
+//////////////////////////////////////////////////////////////////
+
+void Merge (vector<int>& arr, int left, int mid, int right) {
+
+    int first1 = left;
+    int first2 = mid + 1;
+    int last1 = mid;
+    int last2 = right;
+
+    vector<int> temp;
+    int tempIndex = 0;
+
+    while (first1 <= last1 && first2 <= last2) {
+
+        if (arr[first1] <= arr[first2]) temp.push_back(arr[first1++]);
+        else temp.push_back(arr[first2++]);
+
+    }
+
+    while (first1 <= last1) temp.push_back(arr[first1++]);
+    while (first2 <= last2) temp.push_back(arr[first2++]);
+
+    for (int i = left; i <= right; i++) {
+        arr[i] = temp[tempIndex++];
+    }
+
+}
+
+void MS (vector<int>& arr, int left, int right) {
+
+    if (left < right) {
+
+        int mid = (left + right) / 2;
+
+        MS(arr, 0, mid);
+        MS(arr, mid + 1, right);
+
+        Merge(arr, left, mid, right);
+
+    }
+
+}
+
+void MergeSort (vector<int>& arr) {
+
+    MS(arr, 0, arr.size() - 1);
+
+}
+
 // helper method to print vectors
 void printVector (vector<int> arr) {
     cout << "[";
@@ -65,7 +116,7 @@ int main () {
 
     vector<int> arr = {10, 4, 1, 120, 15};
 
-    InsertionSort(arr);
+    MergeSort(arr);
 
     printVector(arr);
 

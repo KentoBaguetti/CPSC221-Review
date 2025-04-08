@@ -29,4 +29,19 @@
 - Best case time complexity is O(n) (When the array is already sorted in the correct order) <br>
 - Average case is O(n^2) <br><br>
 
-- Insertion sort is pre good when working with data that is nearly sorted or when the problem size is small <br>
+- Insertion sort is pre good when working with data that is nearly sorted or when the problem size is small <br><br>
+
+## Merge Sort
+##### Main Idea
+- Repeatedly divide arrays in half until each subarray contains one element <br>
+- Those subarrays are trivially sorted <br>
+- *Merge* two single-element arrays, which only takes one comparison <br>
+- The merge step stores the subarray halves in a temp array <br>
+- Keep merging larger and larger subarrays <br><br>
+
+##### Analysis
+- Merge cost is O(n)
+- Worst case *n-1* comparisons, checking every subarray index 
+- best case is *n/2* comparisons, checking only one subarray <br>
+- The division step takes O(logn) time <br>
+- Overall cost is O(nlogn) always, which makes merge sort very good. Only downside is the extra space cost when from the temp array. O(n) extra space used. <br><br>
