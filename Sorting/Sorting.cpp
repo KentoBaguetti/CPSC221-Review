@@ -9,6 +9,9 @@
 #include <cmath>
 using namespace std;
 
+//////////////////////////////////////////////////////////////////
+// Simple Sorting Algorithms
+//////////////////////////////////////////////////////////////////
 
 void SelectionSort (vector<int>& arr) {
 
@@ -31,6 +34,24 @@ void SelectionSort (vector<int>& arr) {
 
 }
 
+void InsertionSort (vector<int>& arr) {
+
+    for (int i = 1; i < arr.size(); i++) {
+
+        int temp = arr[i];
+        int j = i;
+
+        while (j > 0 && arr[j - 1] > temp) {
+            arr[j] = arr[j - 1];
+            j--;
+        }
+
+        arr[j] = temp;
+
+    }
+
+}   
+
 // helper method to print vectors
 void printVector (vector<int> arr) {
     cout << "[";
@@ -44,7 +65,7 @@ int main () {
 
     vector<int> arr = {10, 4, 1, 120, 15};
 
-    SelectionSort(arr);
+    InsertionSort(arr);
 
     printVector(arr);
 

@@ -21,3 +21,12 @@
 - The only decent advantage selection sort has that I can think of is compared to something like merge sort, everything happens in place. But at that point use quick sort or insertion sort. <br><br>
 
 ## Insertion Sort
+- Divides the array into sorted and unsorted parts <br>
+- Rather than looking *forwards* like selection sort, it looks *backwards* <br>
+- It tries to insert an *unsorted* element into the correct place in the *sorted* part of the array <br>
+- Repeatedly compare the next unsorted item to the sorted items and *insert* the value into the correct place <br>
+- Worst case time complexity is O(n^2) (When the array is sorted in the opposite order) <br>
+- Best case time complexity is O(n) (When the array is already sorted in the correct order) <br>
+- Average case is O(n^2) <br><br>
+
+- Insertion sort is pre good when working with data that is nearly sorted or when the problem size is small <br>
