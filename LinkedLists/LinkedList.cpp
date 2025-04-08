@@ -28,3 +28,21 @@ struct DoublyLinkedNode {
     DoublyLinkedNode (LIT data, DoublyLinkedNode* prev=nullptr, DoublyLinkedNode* next=nullptr) : data(data), prev(prev), next(next) {} // constructor
 };
 
+template <class LIT>
+SinglyLinkedNode<LIT>* reverse (SinglyLinkedNode<LIT>* head) {
+
+    SinglyLinkedNode* curr = head;
+    SinglyLinkedNode* prev = nullptr;
+
+    while (curr) {
+
+        SinglyLinkedNode* nextNode = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = nextNode;
+
+    }
+
+    return prev;
+
+}
