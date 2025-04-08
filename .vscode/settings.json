@@ -27,6 +27,12 @@
 		"memory": "cpp",
 		"optional": "cpp",
 		"algorithm": "cpp",
-		"queue": "cpp"
+		"queue": "cpp",
+		"__hash_table": "cpp",
+		"__node_handle": "cpp",
+		"__tree": "cpp",
+		"deque": "cpp",
+		"list": "cpp",
+		"set": "cpp"
 	}
 }
