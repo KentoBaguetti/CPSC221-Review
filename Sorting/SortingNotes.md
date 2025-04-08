@@ -18,6 +18,6 @@
 
 - All in all, selection sort is ass and is only viable in limited systems where reads are cheap but writing is expensive.
 - Its only decent to use with small problems we need to sort, or when we can only use a couple lines of code.
-- The only decent advantage selection sort may have compared to something like merge sort is that everything happens in place. But at that point use quick sort or insertion sort. <br><br>
+- The only decent advantage selection sort has that I can think of is compared to something like merge sort, everything happens in place. But at that point use quick sort or insertion sort. <br><br>
 
 ## Insertion Sort
