@@ -206,8 +206,22 @@ Kens version
 - Max number of insertions into the PQ is *|E|* in the worst case <br>
 - Total cost of all insertions is O(|E|log|E|) <br>
 - For dense graphs, |E| == O(|V|^2), which means log|E| is in O(2*log|V|) which is in O(log|V|) <br>
-- Total time complexity of Prim's Algo is *O(|E|log|V|)*
+- Total time complexity of Prim's Algo is *O(|E|log|V|)*<br><br>
 
 
+
+## Dijkstras Algorithm
+Goal: Given a graph and a starting vertex *s*, find the shortest path from *s* to every other vertice in the graph<br>
+
+#### How it Works:
+1) Set the distance to the starting vertex as 0. Set the distance to every other vertice as infinity <br>
+2) Use a PQ to find the vertex with the smallest distance from *s*
+3) For each neighbor *v* of the chosen node *u*, check if the path from *s* to *v* is shorter through *u*, compared to the currently known shortest path. If it is shorter, update *v*'s distance
+4) Once a vertex is extracted from the PQ, mark it as visited, its shortest distance has already been established as no alt routes go to it, therefore we can't find a shorter path
+5) Repeat until all the vertices have been visited
+[Visualization](https://visualgo.net/en/sssp) <br><br>
+
+Time Complexity:
+O((V + E)log(V))
 
 ## Time Complexities
