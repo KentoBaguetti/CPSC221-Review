@@ -5,12 +5,12 @@
 - AVL nodes are very similar to BST nodes except they hold more information such as their height and balance <br>
 - AVL's are balanced via rebalancing operations, which occur when inserting or removing cause an excessive height difference <br><br>
 
-### AVL Tree Properties
+## AVL Tree Properties
 - The height of an AVL tree will always be **O(logn)** <br>
 - Minimum number of nodes in an AVL tree can be found with the equation **N(h) = 1 + N(h-1) + N(h-2)** <br>
 - AVL Trees will always be balanced after being operated on <br><br>
 
-### Rotations
+## Rotations
 - The shape of the tree can be modifed via rotation operations <br>
 - There is more than one tree that can contain the same values <br>
 - A tree's shape can be altered and still preserve the BST property <br>
@@ -29,7 +29,7 @@
 - Take temp and make it the left child of **n**
 - Update the parent node of **n** to point to **n**'s original left child
 
-### Types of AVL Imbalances
+## Types of AVL Imbalances
 Assume left imbalance == negative weight and right imbalance == positive weight <br>
 
 #### Left-Left (LL)
