@@ -50,4 +50,20 @@ Assume left imbalance == negative weight and right imbalance == positive weight 
 - Solve with a right rotation around the right child, then follow with a left rotation around the current node
 - After the first right rotation, the tree looks like the RR case
 
+<br><br>
 
+## AVL Insertions
+- AVL insertion begins with a BST insertion, add the new value as a leaf node in the correct order <br>
+- If the insertion causes an imbalance, rotate to maintain the AVL property <br><br>
+
+## AVL Removals
+- Begin with a BST removal (Predecessor data replacement for 2 child case) <br>
+- Maintain a **decrease** varaible to indicate whether the height of the subtree has decreased <br>
+- Use the **decrease** varaible to increment or decrement local root balance
+- Rebalance is the tree becomes critical <br><br>
+
+## Time Complexitites of AVL Trees
+- Search: **O(logn)**
+- Build AVL Tree: **O(nlogn)**
+- Insert: **O(logn)** (Insert is O(logn) and the rotations are O(1))
+Remove: **O(logn)** (Insert is O(logn) and the rotations are O(1))
